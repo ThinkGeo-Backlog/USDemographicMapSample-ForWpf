@@ -2,7 +2,10 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Shapes;
+using ThinkGeo.MapSuite.Styles;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Styles;
 using ZedGraph;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
@@ -73,7 +75,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
             }
             zedGraph.AxisChange();
 
-            e.Bitmap = zedGraph.GraphPane.GetImage();
+            e.GeoImage = new GeoImage(zedGraph.GraphPane.GetImage());
             zedGraph.Dispose();
         }
     }

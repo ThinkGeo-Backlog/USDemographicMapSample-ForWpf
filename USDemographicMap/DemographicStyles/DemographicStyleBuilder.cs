@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Styles;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {

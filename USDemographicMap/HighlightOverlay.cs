@@ -3,8 +3,11 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Media;
-using ThinkGeo.MapSuite.Core;
-using ThinkGeo.MapSuite.WpfDesktopEdition;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Shapes;
+using ThinkGeo.MapSuite.Styles;
+using ThinkGeo.MapSuite.Wpf;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {
@@ -111,7 +114,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
                 tile.DrawingLayers.Add(highlightFeatureLayer);
             }
 
-            GeoCanvas geoCanvas = new GdiPlusGeoCanvas()
+            GeoCanvas geoCanvas = new PlatformGeoCanvas()
             {
                 CompositingQuality = CompositingQuality.HighSpeed,
                 DrawingQuality = DrawingQuality.HighSpeed,

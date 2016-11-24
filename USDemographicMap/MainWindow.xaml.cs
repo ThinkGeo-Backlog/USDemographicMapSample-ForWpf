@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls.Primitives;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Layers;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {

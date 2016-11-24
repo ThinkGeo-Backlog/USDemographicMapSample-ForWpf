@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Shapes;
+using ThinkGeo.MapSuite.Styles;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {

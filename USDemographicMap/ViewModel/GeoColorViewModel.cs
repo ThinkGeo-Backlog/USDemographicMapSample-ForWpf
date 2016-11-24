@@ -1,5 +1,5 @@
 ﻿using System.Windows.Media;
-using ThinkGeo.MapSuite.Core;
+using ThinkGeo.MapSuite.Drawing;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {

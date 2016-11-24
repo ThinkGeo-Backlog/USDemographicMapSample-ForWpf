@@ -10,8 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Xml.Linq;
-using ThinkGeo.MapSuite.Core;
-using ThinkGeo.MapSuite.WpfDesktopEdition;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Shapes;
+using ThinkGeo.MapSuite.Styles;
+using ThinkGeo.MapSuite.Wpf;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {
@@ -228,7 +231,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         public void UpdateMap()
         {
-            Collection<ThinkGeo.MapSuite.Core.Style> activeStyles = CurrentStyleBuilder.GetStyles(mapModel.DefaultFeatureLayer.FeatureSource);
+            Collection<ThinkGeo.MapSuite.Styles.Style> activeStyles = CurrentStyleBuilder.GetStyles(mapModel.DefaultFeatureLayer.FeatureSource);
             mapModel.DefaultFeatureLayer.ZoomLevelSet.ZoomLevel01.CustomStyles.Clear();
             foreach (var activeStyle in activeStyles)
             {
@@ -437,7 +440,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         private float GetLegendWidth(LegendAdornmentLayer legendAdornmentLayer)
         {
-            GdiPlusGeoCanvas gdiPlusGeoCanvas = new GdiPlusGeoCanvas();
+            WpfGeoCanvas gdiPlusGeoCanvas = new WpfGeoCanvas();
             LegendItem title = legendAdornmentLayer.Title;
             float width = gdiPlusGeoCanvas.MeasureText(title.TextStyle.TextColumnName, new GeoFont("Segoe UI", 12)).Width
                + title.ImageWidth + title.ImageRightPadding + title.ImageLeftPadding + title.TextRightPadding + title.TextLeftPadding + title.LeftPadding + title.RightPadding;
@@ -456,7 +459,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         private float GetLegendHeight(LegendAdornmentLayer legendAdornmentLayer)
         {
-            GdiPlusGeoCanvas gdiPlusGeoCanvas = new GdiPlusGeoCanvas();
+            WpfGeoCanvas gdiPlusGeoCanvas = new WpfGeoCanvas();
             LegendItem title = legendAdornmentLayer.Title;
             float titleMeasuredHeight = gdiPlusGeoCanvas.MeasureText(title.TextStyle.TextColumnName, new GeoFont("Segoe UI", 12)).Height;
             float legendHeight = new[] { titleMeasuredHeight, title.ImageHeight, title.Height }.Max();

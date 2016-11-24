@@ -1,7 +1,9 @@
 ﻿using System.Windows;
-using ThinkGeo.MapSuite.Core;
-using ThinkGeo.MapSuite.USDemographicMap.Properties;
-using ThinkGeo.MapSuite.WpfDesktopEdition;
+using ThinkGeo.MapSuite.Drawing;
+using ThinkGeo.MapSuite.Layers;
+using ThinkGeo.MapSuite.Shapes;
+using ThinkGeo.MapSuite.Styles;
+using ThinkGeo.MapSuite.Wpf;
 
 namespace ThinkGeo.MapSuite.USDemographicMap
 {
@@ -85,7 +87,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
             censusStateFeatureLayer = new ShapeFileFeatureLayer(MapSuiteSampleHelper.GetValueFromConfiguration("UsShapefilePath"));
             censusStateFeatureLayer.ZoomLevelSet.ZoomLevel01.ApplyUntilZoomLevel = ApplyUntilZoomLevel.Level20;
-            censusStateFeatureLayer.DrawingMarginPercentage = 100;
+            censusStateFeatureLayer.DrawingMarginInPixel = 100;
 
             demographicLayerOverlay = new LayerOverlay();
             demographicLayerOverlay.TileType = TileType.SingleTile;
