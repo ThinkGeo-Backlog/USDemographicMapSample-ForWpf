@@ -87,7 +87,6 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
             censusStateFeatureLayer = new ShapeFileFeatureLayer(MapSuiteSampleHelper.GetValueFromConfiguration("UsShapefilePath"));
             censusStateFeatureLayer.ZoomLevelSet.ZoomLevel01.ApplyUntilZoomLevel = ApplyUntilZoomLevel.Level20;
-            censusStateFeatureLayer.DrawingMarginInPixel = 100;
 
             demographicLayerOverlay = new LayerOverlay();
             demographicLayerOverlay.TileType = TileType.SingleTile;

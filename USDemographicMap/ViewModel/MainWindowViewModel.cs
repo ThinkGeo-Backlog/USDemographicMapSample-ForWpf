@@ -231,7 +231,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         public void UpdateMap()
         {
-            Collection<ThinkGeo.MapSuite.Styles.Style> activeStyles = CurrentStyleBuilder.GetStyles(mapModel.DefaultFeatureLayer.FeatureSource);
+            Collection<Styles.Style> activeStyles = CurrentStyleBuilder.GetStyles(mapModel.DefaultFeatureLayer.FeatureSource);
             mapModel.DefaultFeatureLayer.ZoomLevelSet.ZoomLevel01.CustomStyles.Clear();
             foreach (var activeStyle in activeStyles)
             {
@@ -440,7 +440,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         private float GetLegendWidth(LegendAdornmentLayer legendAdornmentLayer)
         {
-            WpfGeoCanvas gdiPlusGeoCanvas = new WpfGeoCanvas();
+            PlatformGeoCanvas gdiPlusGeoCanvas = new PlatformGeoCanvas();
             LegendItem title = legendAdornmentLayer.Title;
             float width = gdiPlusGeoCanvas.MeasureText(title.TextStyle.TextColumnName, new GeoFont("Segoe UI", 12)).Width
                + title.ImageWidth + title.ImageRightPadding + title.ImageLeftPadding + title.TextRightPadding + title.TextLeftPadding + title.LeftPadding + title.RightPadding;
@@ -459,7 +459,7 @@ namespace ThinkGeo.MapSuite.USDemographicMap
 
         private float GetLegendHeight(LegendAdornmentLayer legendAdornmentLayer)
         {
-            WpfGeoCanvas gdiPlusGeoCanvas = new WpfGeoCanvas();
+            PlatformGeoCanvas gdiPlusGeoCanvas = new PlatformGeoCanvas();
             LegendItem title = legendAdornmentLayer.Title;
             float titleMeasuredHeight = gdiPlusGeoCanvas.MeasureText(title.TextStyle.TextColumnName, new GeoFont("Segoe UI", 12)).Height;
             float legendHeight = new[] { titleMeasuredHeight, title.ImageHeight, title.Height }.Max();
